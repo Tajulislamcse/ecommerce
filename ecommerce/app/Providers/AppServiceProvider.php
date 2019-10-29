@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(
+         'App\Repositories\IProductRepository',
+         'App\Repositories\ProductRepository'
+
+        );
+
+        $this->app->bind(
+            'App\Services\IProductService',
+            'App\Services\ProductService'
+
+           );
         //
     }
 
@@ -24,5 +36,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Schema::defaultStringLength(191);
     }
 }
