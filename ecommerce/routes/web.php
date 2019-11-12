@@ -26,3 +26,4 @@ Route::prefix('admin')->group(function()
     Route::get('/dashboard','Admin\DashBoardController@index')->name('dashboard');
 
 });
+Route::get('/store','PagesController@index')->name('store');
