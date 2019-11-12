@@ -49,7 +49,7 @@
 
 <script src="{{asset('bower_components')}}/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<script src="{{asset('dist')}}/js/adminlte.min.js"></script>
+<script src="{{asset('js')}}/adminlte.min.js"></script>
     
 
 </body>
