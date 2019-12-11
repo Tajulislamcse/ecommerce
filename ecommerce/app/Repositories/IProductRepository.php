@@ -1,7 +1,9 @@
 <?php
 namespace App\Repositories;
 
-interface IProductRepository
+
+interface IProductRepository extends IRepository
 {
+
 
 }

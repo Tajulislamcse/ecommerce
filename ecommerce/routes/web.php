@@ -23,7 +23,8 @@ Route::get('/report', 'HomeController@report')->name('report');
 
 Route::prefix('admin')->group(function()
 {
-    Route::get('/dashboard','Admin\DashBoardController@index')->name('dashboard');
+	Route::get('/products/getProductsJson', 'Admin\ProductController@getProductsJson');
+    Route::resource('/products','Admin\ProductController');
 
 });
 Route::get('/store','PagesController@index')->name('store');
