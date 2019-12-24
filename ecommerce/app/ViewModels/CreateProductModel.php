@@ -1,4 +1,4 @@
-<?php
+ <?php
 namespace App\ViewModels;
 use App\Services\IProductService;
 use Illuminate\Http\Request;

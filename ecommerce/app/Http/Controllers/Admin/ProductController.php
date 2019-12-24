@@ -35,7 +35,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, ICreateProductModel $CreateProductModel)
-    {
+    { 
         $CreateProductModel->store();
         //return redirect()->back();
         return redirect('/admin/products');
