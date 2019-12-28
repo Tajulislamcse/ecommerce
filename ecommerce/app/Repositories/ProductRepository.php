@@ -1,12 +1,12 @@
 <?php
 namespace App\Repositories;
-use App\Repositories\Repository;
+//use App\Repositories\Repository;
 use App\Factories\ProductsFactory as ProductsFactory;
 class ProductRepository extends Repository implements IProductRepository
 {
     public function __construct()
     {
-        $product = resolve('App\ProductDTO');
+        $product = resolve('App\Models\ProductDTO');
         parent::setModel($product);
     }
     public function getWithFilter($field, $fieldValue, $orderColumn, $orderDirection, $itemCount)

@@ -7,4 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class InventoryDTO extends Model
 {
     //
+    protected $fillable=[
+      'productId',
+      'quantity',
+      'purchasePrice',
+      'vendorId'
+    ];
+    public function products()
+    {
+    	return $this->hasMany('App\Models\ProductDTO');
+    }
 }

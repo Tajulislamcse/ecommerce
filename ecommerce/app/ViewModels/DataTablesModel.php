@@ -22,6 +22,7 @@ class DataTablesModel
     }
     public function getSortOrder($columnNames)
     {
+
         $orders = $this->_request->input("order");
         if($orders != null && count($orders) > 0)
         {

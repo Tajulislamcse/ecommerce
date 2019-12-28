@@ -74,7 +74,7 @@ class ProductController extends Controller
         return redirect('/admin/products');
     }
     public function getProductsJson(Request $request)
-    {
+    {        
         $dataTablesModel = new DataTablesModel($request);
         $model = resolve('App\ViewModels\IViewProductModel');
         return $model->getProductsJsonData($dataTablesModel);
