@@ -39,19 +39,8 @@ class ProductRepository extends Repository implements IProductRepository
         //$id = $product->getId();
         $product = parent::get($id);
         
-        $productBO = resolve('App\BusinessObjects\Product');
-        $productBO->setId($product['id']);
-        $productBO->setName($product['name']);
-        $productBO->setSku($product['sku']);
-        $productBO->setImage($product['image']);
-        $productBO->setDescription($product['description']);
-        $productBO->setCategory($product['category']);
-        $productBO->setPrice($product['price']);
-        $productBO->setDiscount($product['discount']);
-        return $productBO;
         
-        
-        //return ProductsFactory::createProducts($product);
+        return ProductsFactory::convertfromModelToBOforRecord($product);
     }
     public function delete($product)
     {
