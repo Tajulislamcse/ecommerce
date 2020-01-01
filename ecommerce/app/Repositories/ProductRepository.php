@@ -34,10 +34,11 @@ class ProductRepository extends Repository implements IProductRepository
         $productsArr = parent::getAll();
         return ProductsFactory::createProducts($productsArr);
     }
-    public function get($product)
-    {
-        $id = $product->getId();
+    public function get($id)
+    {   
+        //$id = $product->getId();
         $product = parent::get($id);
+        
         $productBO = resolve('App\BusinessObjects\Product');
         $productBO->setId($product['id']);
         $productBO->setName($product['name']);
@@ -48,6 +49,9 @@ class ProductRepository extends Repository implements IProductRepository
         $productBO->setPrice($product['price']);
         $productBO->setDiscount($product['discount']);
         return $productBO;
+        
+        
+        //return ProductsFactory::createProducts($product);
     }
     public function delete($product)
     {

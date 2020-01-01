@@ -15,6 +15,9 @@ class CreateProductImageDTOSTable extends Migration
     {
         Schema::create('product_image_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('url');
+            $table->unsignedBigInteger('productId');
+            $table->foreign('productId')->references('id')->on('product_d_t_o_s');
             $table->timestamps();
         });
     }

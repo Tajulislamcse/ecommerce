@@ -15,6 +15,13 @@ class CreateProductReviewDTOSTable extends Migration
     {
         Schema::create('product_review_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('productId');
+            $table->string('Rating');
+            $table->string('ReviewerName');
+            $table->string('EmailAddress')->unique();
+            $table->string('Subject');
+            $table->text('message');
+            $table->foreign('productId')->references('id')->on('product_d_t_o_s');
             $table->timestamps();
         });
     }

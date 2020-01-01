@@ -15,6 +15,8 @@ class CreateSpecificationDTOSTable extends Migration
     {
         Schema::create('specification_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('value');
             $table->timestamps();
         });
     }

@@ -27,9 +27,9 @@ class ProductService implements IProductService
         $totalDisplayCount = $this->_productRepository->getTotalDisplayableProducts($searchText);
         return new PagedData($products, $totalCount, $totalDisplayCount);
     }
-    public function get($product)
+    public function get($id)
     {
-        return $this->_productRepository->get($product);
+        return $this->_productRepository->get($id);
     }
     public function delete($product)
     {

@@ -15,6 +15,8 @@ class CreateProductVendorDTOSTable extends Migration
     {
         Schema::create('product_vendor_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('logoUrl');
             $table->timestamps();
         });
     }

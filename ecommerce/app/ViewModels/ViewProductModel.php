@@ -14,9 +14,9 @@ class ViewProductModel implements IViewProductModel
     }
     public function get($id)
     {
-        $product = resolve('App\BusinessObjects\IProduct');
-        $product->setId($id);
-        return $this->_productService->get($product);
+        //$product = resolve('App\BusinessObjects\IProduct');
+       // $product->setId($id);
+        return $this->_productService->get($id);
     }
     public function delete($id)
     {

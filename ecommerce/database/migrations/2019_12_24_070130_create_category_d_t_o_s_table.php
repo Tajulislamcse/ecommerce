@@ -15,6 +15,8 @@ class CreateCategoryDTOSTable extends Migration
     {
         Schema::create('category_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->boolean('isActive');
             $table->timestamps();
         });
     }

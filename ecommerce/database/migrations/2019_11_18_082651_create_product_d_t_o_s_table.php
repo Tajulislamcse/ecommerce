@@ -16,7 +16,7 @@ class CreateProductDTOSTable extends Migration
         Schema::create('product_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('sku');
+            $table->string('sku')->unique();
             $table->string('image');
             $table->string('category');
             $table->string('description');

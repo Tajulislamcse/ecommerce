@@ -15,8 +15,10 @@ class CreateFavouriteProductDTOSTable extends Migration
     {
         Schema::create('favourite_product_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('userId');
-            $table->bigInteger('productId');
+            $table->unsignedbigInteger('userId');
+            $table->foreign('userId')->references('id')->on('users');
+            $table->unsignedbigInteger('productId');
+            $table->foreign('productId')->references('id')->on('product_d_t_o_s');
             $table->timestamps();
         });
     }

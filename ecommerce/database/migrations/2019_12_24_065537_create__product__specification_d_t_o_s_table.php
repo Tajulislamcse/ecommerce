@@ -15,6 +15,12 @@ class CreateProductSpecificationDTOSTable extends Migration
     {
         Schema::create('_product__specification_d_t_o_s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('productId')->unique();
+            $table->foreign('productId')->references('id')->on('product_d_t_o_s');
+
+            $table->unsignedBigInteger('specificationId')->unique();
+            $table->foreign('specificationId')->references('id')->on('specification_d_t_o_s');
+
             $table->timestamps();
         });
     }
